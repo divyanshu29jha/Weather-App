@@ -1,0 +1,95 @@
+<%- include("header") -%>
+    
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#" style="color:blue">Live Weather</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Our Services
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Air Quality</a>
+              <a class="dropdown-item" href="#">Cyclone Prediction</a>
+              <a class="dropdown-item" href="#">Monsoon Prediction</a>
+              <a class="dropdown-item" href="#">Seasonal Forecast</a>
+              <a class="dropdown-item" href="#">Marine Forecast</a>
+              <a class="dropdown-item" href="#">Tourism Forecast</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+        
+        <form action="/" method="post" class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" name="cityName" id="submit" placeholder="Enter the city" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    
+    <div class="container">
+      <main>
+        <h1 class="my-4 text-center">Weather for <%= yourCity %></h1>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Temperature</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><%= temp %><small class="text-muted fw-light"><span>&#8451;</span></small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Temperature : <%= temp %><small class="text-muted fw-light"><span>&#8451;</span></small></li>
+                  <li>Max Temperature : <%= maxTemp %><small class="text-muted fw-light"><span>&#8451;</span></small></li>
+                  <li>Min Temperature : <%= minTemp %><small class="text-muted fw-light"><span>&#8451;</span></small></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Humidity</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><%= humidity %><small class="text-muted fw-light">%</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Humidity : <%= humidity %><small class="text-muted fw-light">%</small></li>
+                  <li>Precipitation : <%= pct %><small class="text-muted fw-light">%</small></li>
+                  <li>Feels like : <%= feelsLike %><small class="text-muted fw-light"><span>&#8451;</span></small></li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card mb-4 rounded-3 shadow-sm border-primary">
+              <div class="card-header py-3 text-white bg-primary border-primary">
+                <h4 class="my-0 fw-normal">Wind</h4>
+              </div>
+              <div class="card-body">
+                <h1 class="card-title pricing-card-title"><%= windSpeed %><small class="text-muted fw-light">km/hr</small></h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                  <li>Wind speed : <%= windSpeed %><small class="text-muted fw-light">km/hr</small></li>
+                  <li>Sunrise time : <%= sunrise %></li>
+                  <li>Sunset time : <%= sunset %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </main>
+    </div>
+    
+<%- include("footer") -%>
+    
