@@ -1,6 +1,8 @@
 const express = require("express");		// npm i express
 const bodyParser = require("body-parser");	// npm i body-parser
 const https = require("https");
+const {config} = require("dotenv");
+config();
 
 const app = express();
 
@@ -34,7 +36,7 @@ app.post("/", (req, res) => {
 		"port": null,
 		"path": "/v1/weather?city=" + myCity,
 		"headers": {
-			"X-RapidAPI-Key": "913a2f7725msh624c7d1603a1295p1be896jsn67cfa03ef040",
+			"X-RapidAPI-Key": process.env.API_KEY,
 			"X-RapidAPI-Host": "weather-by-api-ninjas.p.rapidapi.com",
 			"useQueryString": true
 		}
